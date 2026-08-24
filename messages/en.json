@@ -1,5 +1,7 @@
 {
   "Hero": {
-    "greeting": "Hi, I'm Franco"
+    "title": "I build tools people actually use",
+    "subtitle": "Full Stack Developer specialized in Next.js, TypeScript and Supabase.",
+    "cta": "View projects"
   }
 }
