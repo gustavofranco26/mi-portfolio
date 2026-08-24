@@ -3,6 +3,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { Fraunces, Inter } from 'next/font/google';
 import { routing } from '@/i18n/routing';
+import { SmoothScroll } from '@/components/SmoothScroll';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -40,7 +41,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${fraunces.variable} ${inter.variable}`}>
       <body className="font-sans">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <SmoothScroll>{children}</SmoothScroll>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

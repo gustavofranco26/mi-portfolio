@@ -3,5 +3,9 @@
     "title": "I build tools people actually use",
     "subtitle": "Full Stack Developer specialized in Next.js, TypeScript and Supabase.",
     "cta": "View projects"
+  },
+  "About": {
+    "heading": "About me",
+    "body": "Full-stack software engineer, Holberton School graduate. I built and optimized production systems at American Certification Service, improving site speed by over 20%. I currently develop internal tools with Next.js and Supabase for a law firm, and previously taught full-stack programming freelance."
   }
 }
