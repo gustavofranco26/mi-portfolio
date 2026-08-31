@@ -5,6 +5,7 @@ import { Fraunces, Inter } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import './globals.css';
+import { Header } from '@/components/Header';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -42,7 +43,8 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${fraunces.variable} ${inter.variable}`}>
       <body className="font-sans">
         <NextIntlClientProvider>
-          <SmoothScroll>{children}</SmoothScroll>
+          <SmoothScroll>
+             <Header />{children}</SmoothScroll>
         </NextIntlClientProvider>
       </body>
     </html>

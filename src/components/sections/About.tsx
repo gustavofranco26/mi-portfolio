@@ -7,7 +7,7 @@ export function About() {
   const t = useTranslations('About');
 
   return (
-    <section className="min-h-screen flex items-center px-8 md:px-16 border-t border-border">
+    <section id="about" className="min-h-screen flex items-center px-8 md:px-16 border-t border-border">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
