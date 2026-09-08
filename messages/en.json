@@ -12,6 +12,25 @@
   "About": {
     "heading": "About me",
     "body": "Full-stack software engineer, Holberton School graduate. I built and optimized production systems at American Certification Service, improving site speed by over 20%. I currently develop internal tools with Next.js and Supabase, and previously taught full-stack programming freelance."
+  },
+
+  "Projects": {
+    "heading": "Projects",
+    "viewRepo": "View repository",
+    "private": "Private project",
+    "items": {
+      "sasv": {
+        "title": "SASV Pedregal",
+        "description": "System to automate payroll management processes."
+      },
+      "airbnb": {
+        "title": "Airbnb Clone",
+        "description": "Scalable Airbnb-inspired app, from front-end design to back-end integration."
+      },
+      "gestapp": {
+        "title": "Mi GestApp",
+        "description": "Personal dashboard for organizing daily tasks and habits."
+      }
+    }
   }
-  
 }
