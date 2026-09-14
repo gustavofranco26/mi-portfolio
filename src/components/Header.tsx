@@ -32,6 +32,9 @@ export function Header() {
         <a href="#projects" className="hover:text-foreground transition-colors">
           {t('projects')}
         </a>
+        <a href="#stack" className="hover:text-foreground transition-colors">
+          {t('stack')}
+        </a>
         <a href="#contact" className="hover:text-foreground transition-colors">
           {t('contact')}
         </a>

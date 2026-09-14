@@ -2,6 +2,7 @@
   "Nav": {
     "about": "About",
     "projects": "Projects",
+    "stack": "Stack",
     "contact": "Contact"
   },
   "Hero": {
@@ -32,5 +33,20 @@
         "description": "Personal dashboard for organizing daily tasks and habits."
       }
     }
+  },
+
+  "Stack": {
+    "heading": "Stack",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools"
+    }
+  },
+
+  "Contact": {
+    "heading": "Contact",
+    "body": "Have a project in mind or an opportunity to discuss? Reach out."
   }
 }

@@ -2,6 +2,7 @@
   "Nav": {
     "about": "Sobre mí",
     "projects": "Proyectos",
+    "stack": "Stack",
     "contact": "Contacto"
   },
   "Hero": {
@@ -32,5 +33,20 @@
         "description": "Dashboard personal para organizar tareas y hábitos del día a día."
       }
     }
+  },
+
+  "Stack": {
+    "heading": "Stack",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de datos",
+      "tools": "Herramientas"
+    }
+  },
+
+  "Contact": {
+    "heading": "Contacto",
+    "body": "¿Tienes un proyecto en mente o una oportunidad para conversar? Escríbeme."
   }
 }
