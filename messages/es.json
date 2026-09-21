@@ -47,6 +47,24 @@
 
   "Contact": {
     "heading": "Contacto",
-    "body": "¿Tienes un proyecto en mente o una oportunidad para conversar? Escríbeme."
+    "body": "¿Tienes un proyecto en mente o una oportunidad para conversar? Escríbeme.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame un poco de qué se trata",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando...",
+      "success": "¡Gracias! Tu mensaje llegó — te responderé pronto.",
+      "error": "Algo salió mal. Intenta de nuevo o escríbeme directo por email.",
+      "errors": {
+        "name": "Ingresa un nombre (2 a 100 caracteres).",
+        "email": "Ingresa un email válido.",
+        "message": "El mensaje debe tener entre 10 y 2000 caracteres."
+      }
+    },
+    "orDirect": "O escríbeme directo"
   }
 }

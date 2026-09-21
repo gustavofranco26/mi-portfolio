@@ -47,6 +47,24 @@
 
   "Contact": {
     "heading": "Contact",
-    "body": "Have a project in mind or an opportunity to discuss? Reach out."
+    "body": "Have a project in mind or an opportunity to discuss? Reach out.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me a bit about it",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Thanks! Your message is in — I'll get back to you soon.",
+      "error": "Something went wrong. Please try again or email me directly.",
+      "errors": {
+        "name": "Enter a name (2-100 characters).",
+        "email": "Enter a valid email address.",
+        "message": "Message should be between 10 and 2000 characters."
+      }
+    },
+    "orDirect": "Or reach me directly"
   }
 }
