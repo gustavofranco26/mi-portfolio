@@ -8,8 +8,13 @@ export function Projects() {
   const t = useTranslations('Projects');
 
   return (
-    <section id="projects" className="min-h-screen px-8 md:px-16 py-32 border-t border-border">
+    <section
+      id="projects"
+      aria-labelledby="projects-heading"
+      className="min-h-screen px-8 md:px-16 py-24 md:py-32 border-t border-border"
+    >
       <motion.h2
+        id="projects-heading"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
@@ -19,7 +24,7 @@ export function Projects() {
         {t('heading')}
       </motion.h2>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.article
             key={project.id}
@@ -36,16 +41,16 @@ export function Projects() {
               <p className="text-muted mb-6">
                 {t(`items.${project.id}.description`)}
               </p>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <ul className="flex flex-wrap gap-2 mb-6">
                 {project.stack.map((tech) => (
-                  <span
+                  <li
                     key={tech}
                     className="text-xs border border-border px-2 py-1 text-muted"
                   >
                     {tech}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             {project.repoUrl ? (
@@ -53,9 +58,12 @@ export function Projects() {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent text-sm hover:underline"
+                aria-label={t('viewRepoLabel', {
+                  title: t(`items.${project.id}.title`),
+                })}
+                className="inline-flex min-h-11 items-center text-accent text-sm hover:underline"
               >
-                {t('viewRepo')} →
+                {t('viewRepo')} <span aria-hidden="true">&nbsp;→</span>
               </a>
             ) : (
               <span className="text-muted text-sm italic">

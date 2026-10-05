@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -9,7 +9,11 @@ const PHONE_DISPLAY = '+51 904 845 087';
 const PHONE_HREF = '+51904845087';
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-type FieldErrors = Partial<Record<'name' | 'email' | 'message', string>>;
+const FIELD_CLASS =
+  'w-full bg-surface border border-border-strong px-4 py-3 text-foreground placeholder:text-muted focus:border-accent transition-colors';
+
+type FieldName = 'name' | 'email' | 'message';
+type FieldErrors = Partial<Record<FieldName, string>>;
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
 export function Contact() {
@@ -22,6 +26,10 @@ export function Contact() {
   const [company, setCompany] = useState('');
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>('idle');
+
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   function validate(): FieldErrors {
     const next: FieldErrors = {};
@@ -42,7 +50,14 @@ export function Contact() {
 
     const validationErrors = validate();
     setErrors(validationErrors);
+
     if (Object.keys(validationErrors).length > 0) {
+      setStatus('idle');
+      const refs = { name: nameRef, email: emailRef, message: messageRef };
+      const firstInvalid = (['name', 'email', 'message'] as const).find(
+        (field) => validationErrors[field],
+      );
+      if (firstInvalid) refs[firstInvalid].current?.focus();
       return;
     }
 
@@ -69,7 +84,11 @@ export function Contact() {
   const isSending = status === 'sending';
 
   return (
-    <section id="contact" className="min-h-screen flex items-center px-8 md:px-16 border-t border-border">
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="min-h-screen flex items-center px-8 md:px-16 py-24 border-t border-border"
+    >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +96,10 @@ export function Contact() {
         transition={{ duration: 0.7, ease: 'easeOut' }}
         className="max-w-2xl w-full"
       >
-        <h2 className="text-3xl md:text-5xl font-display font-bold text-accent mb-8">
+        <h2
+          id="contact-heading"
+          className="text-3xl md:text-5xl font-display font-bold text-accent mb-8"
+        >
           {t('heading')}
         </h2>
         <p className="text-lg md:text-xl text-foreground leading-relaxed mb-10">
@@ -102,83 +124,97 @@ export function Contact() {
           </div>
 
           <div>
-            <label htmlFor="name" className="block text-sm text-muted mb-2">
+            <label htmlFor="contact-name" className="block text-sm text-muted mb-2">
               {t('form.name')}
             </label>
             <input
-              id="name"
+              ref={nameRef}
+              id="contact-name"
+              name="name"
               type="text"
+              autoComplete="name"
+              aria-required="true"
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? 'contact-name-error' : undefined}
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder={t('form.namePlaceholder')}
-              className="w-full bg-surface border border-border px-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+              className={FIELD_CLASS}
             />
             {errors.name && (
-              <p className="text-red-400 text-sm mt-2">{errors.name}</p>
+              <p id="contact-name-error" className="text-red-400 text-sm mt-2">
+                {errors.name}
+              </p>
             )}
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm text-muted mb-2">
+            <label htmlFor="contact-email" className="block text-sm text-muted mb-2">
               {t('form.email')}
             </label>
             <input
-              id="email"
+              ref={emailRef}
+              id="contact-email"
+              name="email"
               type="email"
+              autoComplete="email"
+              aria-required="true"
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? 'contact-email-error' : undefined}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t('form.emailPlaceholder')}
-              className="w-full bg-surface border border-border px-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+              className={FIELD_CLASS}
             />
             {errors.email && (
-              <p className="text-red-400 text-sm mt-2">{errors.email}</p>
+              <p id="contact-email-error" className="text-red-400 text-sm mt-2">
+                {errors.email}
+              </p>
             )}
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm text-muted mb-2">
+            <label htmlFor="contact-message" className="block text-sm text-muted mb-2">
               {t('form.message')}
             </label>
             <textarea
-              id="message"
+              ref={messageRef}
+              id="contact-message"
+              name="message"
               rows={5}
+              aria-required="true"
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? 'contact-message-error' : undefined}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder={t('form.messagePlaceholder')}
-              className="w-full bg-surface border border-border px-4 py-3 text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors resize-none"
+              className={`${FIELD_CLASS} resize-none`}
             />
             {errors.message && (
-              <p className="text-red-400 text-sm mt-2">{errors.message}</p>
+              <p id="contact-message-error" className="text-red-400 text-sm mt-2">
+                {errors.message}
+              </p>
             )}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <button
               type="submit"
               disabled={isSending}
-              className="inline-flex w-fit items-center border border-border px-6 py-3 text-accent hover:bg-surface transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-busy={isSending}
+              className="inline-flex w-fit items-center border border-border-strong px-6 py-3 text-accent hover:bg-surface transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSending ? t('form.sending') : t('form.submit')}
             </button>
 
-            {status === 'success' && (
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-accent text-sm"
-              >
-                {t('form.success')}
-              </motion.p>
-            )}
-            {status === 'error' && (
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-red-400 text-sm"
-              >
-                {t('form.error')}
-              </motion.p>
-            )}
+            <div role="status" aria-live="polite">
+              {status === 'success' && (
+                <p className="text-accent text-sm">{t('form.success')}</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-sm">{t('form.error')}</p>
+              )}
+            </div>
           </div>
         </form>
 
@@ -187,13 +223,13 @@ export function Contact() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={`mailto:${EMAIL}`}
-              className="inline-flex w-fit items-center border border-border px-6 py-3 text-accent hover:bg-surface transition-colors"
+              className="inline-flex w-fit items-center border border-border-strong px-6 py-3 text-accent hover:bg-surface transition-colors"
             >
               {EMAIL}
             </a>
             <a
               href={`tel:${PHONE_HREF}`}
-              className="inline-flex w-fit items-center border border-border px-6 py-3 text-accent hover:bg-surface transition-colors"
+              className="inline-flex w-fit items-center border border-border-strong px-6 py-3 text-accent hover:bg-surface transition-colors"
             >
               {PHONE_DISPLAY}
             </a>

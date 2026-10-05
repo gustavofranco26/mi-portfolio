@@ -3,7 +3,13 @@
     "about": "About",
     "projects": "Projects",
     "stack": "Stack",
-    "contact": "Contact"
+    "contact": "Contact",
+    "label": "Main navigation",
+    "home": "FC — Franco Cardenas, back to top",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "skip": "Skip to content"
   },
   "Hero": {
     "title": "I build tools people actually use",
@@ -14,7 +20,6 @@
     "heading": "About me",
     "body": "Full-stack software engineer, Holberton School graduate. I built and optimized production systems at American Certification Service, improving site speed by over 20%. I currently develop internal tools with Next.js and Supabase, and previously taught full-stack programming freelance."
   },
-
   "Projects": {
     "heading": "Projects",
     "viewRepo": "View repository",
@@ -32,9 +37,9 @@
         "title": "Mi GestApp",
         "description": "Personal dashboard for organizing daily tasks and habits."
       }
-    }
+    },
+    "viewRepoLabel": "View repository of {title} (opens in a new tab)"
   },
-
   "Stack": {
     "heading": "Stack",
     "categories": {
@@ -44,7 +49,6 @@
       "tools": "Tools"
     }
   },
-
   "Contact": {
     "heading": "Contact",
     "body": "Have a project in mind or an opportunity to discuss? Reach out.",
@@ -66,5 +70,12 @@
       }
     },
     "orDirect": "Or reach me directly"
+  },
+  "Metadata": {
+    "title": "Franco Cardenas — Full Stack Developer",
+    "description": "Portfolio of Franco Cardenas, a Full Stack Developer specialized in Next.js, TypeScript and Supabase. Projects, tech stack and contact."
+  },
+  "Footer": {
+    "newTab": "(opens in a new tab)"
   }
 }

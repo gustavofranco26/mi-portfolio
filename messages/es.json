@@ -3,7 +3,13 @@
     "about": "Sobre mí",
     "projects": "Proyectos",
     "stack": "Stack",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "label": "Navegación principal",
+    "home": "FC — Franco Cardenas, volver al inicio",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma",
+    "skip": "Saltar al contenido"
   },
   "Hero": {
     "title": "Construyo herramientas que la gente realmente usa",
@@ -14,7 +20,6 @@
     "heading": "Sobre mí",
     "body": "Ingeniero de software full-stack egresado de Holberton School. Construí y optimicé sistemas en producción en American Certification Service, mejorando la velocidad del sitio en más de un 20%. Hoy desarrollo herramientas internas con Next.js y Supabase, y antes di clases de programación full-stack de forma freelance."
   },
-
   "Projects": {
     "heading": "Proyectos",
     "viewRepo": "Ver repositorio",
@@ -32,9 +37,9 @@
         "title": "Mi GestApp",
         "description": "Dashboard personal para organizar tareas y hábitos del día a día."
       }
-    }
+    },
+    "viewRepoLabel": "Ver repositorio de {title} (se abre en una pestaña nueva)"
   },
-
   "Stack": {
     "heading": "Stack",
     "categories": {
@@ -44,7 +49,6 @@
       "tools": "Herramientas"
     }
   },
-
   "Contact": {
     "heading": "Contacto",
     "body": "¿Tienes un proyecto en mente o una oportunidad para conversar? Escríbeme.",
@@ -66,5 +70,12 @@
       }
     },
     "orDirect": "O escríbeme directo"
+  },
+  "Metadata": {
+    "title": "Franco Cardenas — Full Stack Developer",
+    "description": "Portafolio de Franco Cardenas, Full Stack Developer especializado en Next.js, TypeScript y Supabase. Proyectos, stack y contacto."
+  },
+  "Footer": {
+    "newTab": "(se abre en una pestaña nueva)"
   }
 }

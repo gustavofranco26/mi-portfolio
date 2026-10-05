@@ -8,8 +8,13 @@ export function Stack() {
   const t = useTranslations('Stack');
 
   return (
-    <section id="stack" className="px-8 md:px-16 py-32 border-t border-border">
+    <section
+      id="stack"
+      aria-labelledby="stack-heading"
+      className="px-8 md:px-16 py-24 md:py-32 border-t border-border"
+    >
       <motion.h2
+        id="stack-heading"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
