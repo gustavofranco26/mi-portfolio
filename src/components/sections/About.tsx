@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { reveal } from '@/lib/motion';
 
 export function About() {
   const t = useTranslations('About');
@@ -12,13 +13,7 @@ export function About() {
       aria-labelledby="about-heading"
       className="min-h-screen flex items-center px-8 md:px-16 py-24 border-t border-border"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="max-w-2xl"
-      >
+      <motion.div {...reveal()} className="max-w-2xl">
         <h2
           id="about-heading"
           className="text-3xl md:text-5xl font-display font-bold text-accent mb-8"

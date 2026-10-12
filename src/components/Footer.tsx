@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { GITHUB_URL, LINKEDIN_URL, SITE_NAME } from '@/lib/site';
+import { reveal } from '@/lib/motion';
 
 const LINKS = [
   { label: 'GitHub', href: GITHUB_URL },
@@ -15,10 +16,7 @@ export function Footer() {
 
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      {...reveal()}
       className="border-t border-border px-8 md:px-16 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted"
     >
       <p>

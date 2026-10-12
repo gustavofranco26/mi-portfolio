@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import { GITHUB_URL, LINKEDIN_URL, SITE_NAME, SITE_URL } from '@/lib/site';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import { MotionProvider } from '@/components/MotionProvider';
+import { ScrollProgress } from '@/components/ScrollProgress';
 import './globals.css';
 import { Header } from '@/components/Header';
 
@@ -110,6 +111,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <MotionProvider>
             <SmoothScroll>
+              <ScrollProgress />
               <a
                 href="#main"
                 className="sr-only focus:not-sr-only fixed top-4 left-4 z-[60] border border-accent bg-surface px-4 py-2 text-accent"

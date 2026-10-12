@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { stack } from '@/content/stack';
+import { reveal, STAGGER } from '@/lib/motion';
 
 export function Stack() {
   const t = useTranslations('Stack');
@@ -15,10 +16,7 @@ export function Stack() {
     >
       <motion.h2
         id="stack-heading"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        {...reveal()}
         className="text-3xl md:text-5xl font-display font-bold text-accent mb-16"
       >
         {t('heading')}
@@ -28,11 +26,9 @@ export function Stack() {
         {stack.map((group, index) => (
           <motion.div
             key={group.category}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-            className="border border-border bg-surface p-6"
+            {...reveal(index * STAGGER)}
+            whileHover={{ y: -4 }}
+            className="border border-border bg-surface p-6 hover:border-border-strong"
           >
             <h3 className="text-sm uppercase tracking-wide text-accent mb-4">
               {t(`categories.${group.category}`)}

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { projects } from '@/content/projects';
+import { reveal, STAGGER } from '@/lib/motion';
 
 export function Projects() {
   const t = useTranslations('Projects');
@@ -15,10 +16,7 @@ export function Projects() {
     >
       <motion.h2
         id="projects-heading"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        {...reveal()}
         className="text-3xl md:text-5xl font-display font-bold text-accent mb-16"
       >
         {t('heading')}
@@ -28,11 +26,9 @@ export function Projects() {
         {projects.map((project, index) => (
           <motion.article
             key={project.id}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-            className="border border-border bg-surface p-6 flex flex-col justify-between"
+            {...reveal(index * STAGGER)}
+            whileHover={{ y: -4 }}
+            className="border border-border bg-surface p-6 flex flex-col justify-between hover:border-border-strong"
           >
             <div>
               <h3 className="text-xl font-display font-bold mb-3">
@@ -61,9 +57,15 @@ export function Projects() {
                 aria-label={t('viewRepoLabel', {
                   title: t(`items.${project.id}.title`),
                 })}
-                className="inline-flex min-h-11 items-center text-accent text-sm hover:underline"
+                className="group inline-flex min-h-11 items-center text-accent text-sm hover:underline"
               >
-                {t('viewRepo')} <span aria-hidden="true">&nbsp;→</span>
+                {t('viewRepo')}
+                <span
+                  aria-hidden="true"
+                  className="ml-1 inline-block transition-transform group-hover:translate-x-1"
+                >
+                  →
+                </span>
               </a>
             ) : (
               <span className="text-muted text-sm italic">

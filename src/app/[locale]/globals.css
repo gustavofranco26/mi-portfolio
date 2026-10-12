@@ -12,8 +12,12 @@
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
 
-  --animate-fade-up: fade-up 0.6s ease-out both;
-  --animate-slide-up: slide-up 0.6s ease-out both;
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: var(--ease-soft);
+
+  --animate-fade-up: fade-up 0.6s var(--ease-soft) backwards;
+  --animate-slide-up: slide-up 0.6s var(--ease-soft) backwards;
 
   @keyframes slide-up {
     from {
@@ -36,6 +40,32 @@
   }
 }
 
+@utility btn-outline {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--color-border-strong);
+  padding: 0.75rem 1.5rem;
+  color: var(--color-accent);
+  transition-property: background-color, border-color, transform;
+
+  @media (hover: hover) {
+    &:not(:disabled):hover {
+      background-color: var(--color-surface);
+      border-color: var(--color-accent);
+    }
+  }
+
+  &:not(:disabled):active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
 html {
   color-scheme: dark;
   scroll-padding-top: 5rem;
@@ -49,4 +79,15 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

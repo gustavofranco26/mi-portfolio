@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
+import { reveal } from '@/lib/motion';
 
 const EMAIL = 'guscodigo@gmail.com';
 const PHONE_DISPLAY = '+51 904 845 087';
@@ -89,13 +90,7 @@ export function Contact() {
       aria-labelledby="contact-heading"
       className="min-h-screen flex items-center px-8 md:px-16 py-24 border-t border-border"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="max-w-2xl w-full"
-      >
+      <motion.div {...reveal()} className="max-w-2xl w-full">
         <h2
           id="contact-heading"
           className="text-3xl md:text-5xl font-display font-bold text-accent mb-8"
@@ -202,7 +197,7 @@ export function Contact() {
               type="submit"
               disabled={isSending}
               aria-busy={isSending}
-              className="inline-flex w-fit items-center border border-border-strong px-6 py-3 text-accent hover:bg-surface transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-outline"
             >
               {isSending ? t('form.sending') : t('form.submit')}
             </button>
@@ -223,13 +218,13 @@ export function Contact() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={`mailto:${EMAIL}`}
-              className="inline-flex w-fit items-center border border-border-strong px-6 py-3 text-accent hover:bg-surface transition-colors"
+              className="btn-outline"
             >
               {EMAIL}
             </a>
             <a
               href={`tel:${PHONE_HREF}`}
-              className="inline-flex w-fit items-center border border-border-strong px-6 py-3 text-accent hover:bg-surface transition-colors"
+              className="btn-outline"
             >
               {PHONE_DISPLAY}
             </a>

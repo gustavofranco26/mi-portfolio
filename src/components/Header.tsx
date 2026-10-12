@@ -4,6 +4,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
+import { EASE_SOFT } from '@/lib/motion';
 
 const NAV_LINKS = ['about', 'projects', 'stack', 'contact'] as const;
 const LOCALES = [
@@ -41,7 +42,7 @@ export function Header() {
     <motion.header
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: EASE_SOFT }}
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-3 md:py-6 bg-background/80 backdrop-blur-md"
     >
       <a
@@ -60,7 +61,7 @@ export function Header() {
           <a
             key={id}
             href={`#${id}`}
-            className="py-2 hover:text-foreground transition-colors"
+            className="relative py-2 hover:text-foreground transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:after:scale-x-100 focus-visible:after:scale-x-100"
           >
             {t(id)}
           </a>
@@ -128,7 +129,7 @@ export function Header() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
+            transition={{ duration: 0.2, ease: EASE_SOFT }}
             className="md:hidden absolute top-full left-0 right-0 flex flex-col border-b border-border bg-background px-8 py-2"
           >
             {NAV_LINKS.map((id) => (
