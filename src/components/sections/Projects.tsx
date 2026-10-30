@@ -12,7 +12,7 @@ export function Projects() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="min-h-screen px-8 md:px-16 py-24 md:py-32 border-t border-border"
+      className="px-8 md:px-16 py-24 md:py-32 border-t border-border"
     >
       <motion.h2
         id="projects-heading"
@@ -68,7 +68,7 @@ export function Projects() {
                 </span>
               </a>
             ) : (
-              <span className="text-muted text-sm italic">
+              <span className="inline-flex min-h-11 items-center text-muted text-sm italic">
                 {t('private')}
               </span>
             )}

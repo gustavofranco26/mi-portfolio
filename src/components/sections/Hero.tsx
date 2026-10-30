@@ -19,7 +19,7 @@ export function Hero() {
       </ParallaxLayer>
 
       <ParallaxLayer speed={0.2} className="mt-6">
-        <p className="animate-fade-up motion-reduce:animate-none [animation-delay:120ms] text-lg md:text-xl text-muted max-w-xl">
+        <p className="animate-fade-up motion-reduce:animate-none [animation-delay:120ms] text-lg md:text-xl text-muted max-w-xl text-balance">
           {t('subtitle')}
         </p>
       </ParallaxLayer>
