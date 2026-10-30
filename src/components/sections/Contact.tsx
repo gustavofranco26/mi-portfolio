@@ -197,6 +197,7 @@ export function Contact() {
               type="submit"
               disabled={isSending}
               aria-busy={isSending}
+              aria-describedby="contact-privacy"
               className="btn-outline"
             >
               {isSending ? t('form.sending') : t('form.submit')}
@@ -211,6 +212,10 @@ export function Contact() {
               )}
             </div>
           </div>
+
+          <p id="contact-privacy" className="text-sm text-muted">
+            {t('form.privacy')}
+          </p>
         </form>
 
         <div className="mt-12 pt-8 border-t border-border">

@@ -27,7 +27,7 @@
     "items": {
       "sasv": {
         "title": "SASV Pedregal",
-        "description": "System to automate payroll management processes."
+        "description": "System to automate the travel request process for employees."
       },
       "airbnb": {
         "title": "Airbnb Clone",
@@ -67,7 +67,8 @@
         "name": "Enter a name (2-100 characters).",
         "email": "Enter a valid email address.",
         "message": "Message should be between 10 and 2000 characters."
-      }
+      },
+      "privacy": "I will use your email and message only to reply to you."
     },
     "orDirect": "Or reach me directly"
   },

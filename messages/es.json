@@ -27,7 +27,7 @@
     "items": {
       "sasv": {
         "title": "SASV Pedregal",
-        "description": "Sistema para automatizar procesos de gestión de planillas."
+        "description": "Sistema para automatizar el proceso de solicitudes de viaje de los empleados."
       },
       "airbnb": {
         "title": "Clon de Airbnb",
@@ -67,7 +67,8 @@
         "name": "Ingresa un nombre (2 a 100 caracteres).",
         "email": "Ingresa un email válido.",
         "message": "El mensaje debe tener entre 10 y 2000 caracteres."
-      }
+      },
+      "privacy": "Usaré tu email y tu mensaje únicamente para responderte."
     },
     "orDirect": "O escríbeme directo"
   },
