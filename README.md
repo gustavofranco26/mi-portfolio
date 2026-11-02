@@ -19,7 +19,7 @@ Portfolio personal bilingüe (español / inglés) de una sola página: presentac
 
 - **Bilingüe (es/en):** rutas `/es` y `/en`; la raíz `/` redirige según el idioma del navegador. Selector de idioma en el header.
 - **Formulario de contacto:** validación en cliente y servidor, campo trampa anti-spam y mensajes guardados en Supabase (tabla `contact_messages` con RLS: solo se permite insertar).
-- **Movimiento cuidado:** revelado al hacer scroll, parallax en el Hero, barra de progreso y micro-interacciones. Respeta `prefers-reduced-motion`.
+- **Movimiento cuidado:** scroll suave con enlaces animados, títulos que se revelan con máscara, texto de "Sobre mí" que se ilumina al leer, tarjetas de proyectos apiladas, parallax en el Hero, fondo que reacciona a cada sección, barra de progreso y micro-interacciones. Respeta `prefers-reduced-motion`.
 - **Accesible:** enlace "saltar al contenido", foco visible, navegación completa por teclado, menú mobile accesible y errores de formulario anunciados.
 - **SEO y redes:** metadata por idioma, `hreflang`, Open Graph y Twitter Card con imagen generada, favicon, `sitemap.xml`, `robots.txt` y datos estructurados JSON-LD.
 - **Rendimiento:** páginas estáticas por idioma. Lighthouse en producción: Accesibilidad, SEO y Buenas prácticas en 100; Performance 100 en desktop y 95–96 en mobile.

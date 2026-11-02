@@ -1,8 +1,6 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { reveal } from '@/lib/motion';
+import { MaskHeading } from '@/components/MaskHeading';
+import { ScrollHighlight } from '@/components/ScrollHighlight';
 
 export function About() {
   const t = useTranslations('About');
@@ -13,19 +11,17 @@ export function About() {
       aria-labelledby="about-heading"
       className="min-h-screen flex items-center justify-center px-8 md:px-16 py-24 border-t border-border"
     >
-      <motion.div {...reveal()} className="w-full max-w-3xl">
-        <h2
+      <div className="w-full max-w-3xl">
+        <MaskHeading
           id="about-heading"
-          className="text-center text-3xl md:text-5xl font-display font-bold text-accent mb-10"
-        >
-          {t('heading')}
-        </h2>
-        <div className="space-y-6 text-left text-lg md:text-xl text-foreground leading-relaxed">
-          <p>{t('body')}</p>
-          <p>{t('passion')}</p>
-          <p>{t('mission')}</p>
-        </div>
-      </motion.div>
+          text={t('heading')}
+          className="mb-10 text-center font-display text-3xl font-bold text-accent md:text-5xl"
+        />
+        <ScrollHighlight
+          paragraphs={[t('body'), t('passion'), t('mission')]}
+          className="space-y-6 text-left text-lg leading-relaxed md:text-xl"
+        />
+      </div>
     </section>
   );
 }

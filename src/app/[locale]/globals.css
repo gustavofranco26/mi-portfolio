@@ -75,6 +75,18 @@
   );
 }
 
+@utility highlight-word {
+  color: color-mix(
+    in srgb,
+    var(--color-foreground) calc(clamp(0, (var(--progress, 1) * (var(--n, 1) + 4) - var(--i, 0)) / 4, 1) * 100%),
+    var(--color-muted)
+  );
+
+  @media (prefers-reduced-motion: reduce) {
+    color: var(--color-foreground);
+  }
+}
+
 html {
   color-scheme: dark;
   scroll-padding-top: 5rem;

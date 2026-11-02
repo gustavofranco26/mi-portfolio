@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { stack } from '@/content/stack';
+import { MaskHeading } from '@/components/MaskHeading';
 import { reveal, STAGGER } from '@/lib/motion';
 
 export function Stack() {
@@ -14,13 +15,11 @@ export function Stack() {
       aria-labelledby="stack-heading"
       className="px-8 md:px-16 py-24 md:py-32 border-t border-border"
     >
-      <motion.h2
+      <MaskHeading
         id="stack-heading"
-        {...reveal()}
-        className="mx-auto max-w-6xl text-center text-3xl md:text-5xl font-display font-bold text-accent mb-16"
-      >
-        {t('heading')}
-      </motion.h2>
+        text={t('heading')}
+        className="mx-auto mb-16 max-w-6xl text-center font-display text-3xl font-bold text-accent md:text-5xl"
+      />
 
       <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {stack.map((group, index) => (
