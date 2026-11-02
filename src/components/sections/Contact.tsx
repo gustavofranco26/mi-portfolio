@@ -220,7 +220,7 @@ export function Contact() {
 
         <div className="mt-12 pt-8 border-t border-border">
           <p className="text-sm text-muted mb-4">{t('orDirect')}</p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4">
             <a
               href={`mailto:${EMAIL}`}
               className="btn-outline"
@@ -233,6 +233,9 @@ export function Contact() {
             >
               {PHONE_DISPLAY}
             </a>
+            <button type="button" disabled className="btn-outline">
+              {t('cv')}
+            </button>
           </div>
         </div>
       </motion.div>

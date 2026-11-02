@@ -14,7 +14,8 @@
   "Hero": {
     "title": "Construyo herramientas que la gente realmente usa",
     "subtitle": "Full Stack Developer especializado en Next.js, TypeScript y Supabase.",
-    "cta": "Ver proyectos"
+    "cta": "Ver proyectos",
+    "ctaSecondary": "Contáctame"
   },
   "About": {
     "heading": "Sobre mí",
@@ -70,7 +71,8 @@
       },
       "privacy": "Usaré tu email y tu mensaje únicamente para responderte."
     },
-    "orDirect": "O escríbeme directo"
+    "orDirect": "O escríbeme directo",
+    "cv": "Descargar CV (próximamente)"
   },
   "Metadata": {
     "title": "Franco Cardenas — Full Stack Developer",
