@@ -3,6 +3,8 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 
+const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
+
 export function useLenis() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -10,8 +12,8 @@ export function useLenis() {
     }
 
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,
+      anchors: { duration: 1.4, easing: easeOutQuart },
     });
 
     function raf(time: number) {

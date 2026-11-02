@@ -17,7 +17,7 @@ export function Footer() {
   return (
     <motion.footer
       {...reveal()}
-      className="border-t border-border px-8 md:px-16 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted"
+      className="border-t border-border px-8 md:px-16 py-10 flex flex-col items-center gap-2 text-center text-sm text-muted"
     >
       <p>
         © {year} {SITE_NAME}

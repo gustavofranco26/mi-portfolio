@@ -11,9 +11,9 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="min-h-screen flex items-center px-8 md:px-16 py-24 border-t border-border"
+      className="min-h-screen flex items-center justify-center px-8 md:px-16 py-24 border-t border-border"
     >
-      <motion.div {...reveal()} className="max-w-2xl">
+      <motion.div {...reveal()} className="max-w-2xl text-center">
         <h2
           id="about-heading"
           className="text-3xl md:text-5xl font-display font-bold text-accent mb-8"

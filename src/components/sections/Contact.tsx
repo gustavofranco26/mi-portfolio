@@ -88,9 +88,9 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="min-h-screen flex items-center px-8 md:px-16 py-24 border-t border-border"
+      className="min-h-screen flex items-center justify-center px-8 md:px-16 py-24 border-t border-border"
     >
-      <motion.div {...reveal()} className="max-w-2xl w-full">
+      <motion.div {...reveal()} className="mx-auto w-full max-w-xl text-center">
         <h2
           id="contact-heading"
           className="text-3xl md:text-5xl font-display font-bold text-accent mb-8"
@@ -101,7 +101,7 @@ export function Contact() {
           {t('body')}
         </p>
 
-        <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5 text-left">
           <div
             aria-hidden="true"
             className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
@@ -192,7 +192,7 @@ export function Contact() {
             )}
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-col items-center gap-3 text-center">
             <button
               type="submit"
               disabled={isSending}
@@ -213,14 +213,14 @@ export function Contact() {
             </div>
           </div>
 
-          <p id="contact-privacy" className="text-sm text-muted">
+          <p id="contact-privacy" className="text-center text-sm text-muted">
             {t('form.privacy')}
           </p>
         </form>
 
         <div className="mt-12 pt-8 border-t border-border">
           <p className="text-sm text-muted mb-4">{t('orDirect')}</p>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4">
+          <div className="flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center gap-4">
             <a
               href={`mailto:${EMAIL}`}
               className="btn-outline"

@@ -17,12 +17,12 @@ export function Projects() {
       <motion.h2
         id="projects-heading"
         {...reveal()}
-        className="text-3xl md:text-5xl font-display font-bold text-accent mb-16"
+        className="mx-auto max-w-6xl text-center text-3xl md:text-5xl font-display font-bold text-accent mb-16"
       >
         {t('heading')}
       </motion.h2>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.article
             key={project.id}

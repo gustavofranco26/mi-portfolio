@@ -7,32 +7,33 @@ export function Hero() {
 
   return (
     <section
+      id="top"
       aria-labelledby="hero-heading"
-      className="min-h-screen flex flex-col justify-center px-8 md:px-16 pt-24 pb-16"
+      className="min-h-screen flex flex-col items-center justify-center text-center px-8 md:px-16 pt-24 pb-16"
     >
-      <ParallaxLayer speed={0.06} className="mb-4">
+      <ParallaxLayer speed={0.06} className="mb-4 w-full">
         <p className="animate-fade-up motion-reduce:animate-none text-sm uppercase tracking-wide text-accent">
           {SITE_NAME}
         </p>
       </ParallaxLayer>
 
-      <ParallaxLayer speed={0.12}>
+      <ParallaxLayer speed={0.12} className="w-full">
         <h1
           id="hero-heading"
-          className="animate-slide-up motion-reduce:animate-none text-4xl sm:text-5xl md:text-7xl font-display font-bold max-w-3xl text-balance"
+          className="animate-slide-up motion-reduce:animate-none mx-auto max-w-3xl text-4xl sm:text-5xl md:text-7xl font-display font-bold text-balance"
         >
           {t('title')}
         </h1>
       </ParallaxLayer>
 
-      <ParallaxLayer speed={0.2} className="mt-6">
-        <p className="animate-fade-up motion-reduce:animate-none [animation-delay:120ms] text-lg md:text-xl text-muted max-w-xl text-balance">
+      <ParallaxLayer speed={0.2} className="mt-6 w-full">
+        <p className="animate-fade-up motion-reduce:animate-none [animation-delay:120ms] mx-auto max-w-xl text-lg md:text-xl text-muted text-balance">
           {t('subtitle')}
         </p>
       </ParallaxLayer>
 
-      <ParallaxLayer speed={0.28} className="mt-10">
-        <div className="animate-fade-up motion-reduce:animate-none [animation-delay:240ms] flex flex-wrap items-center gap-x-8 gap-y-2">
+      <ParallaxLayer speed={0.28} className="mt-10 w-full">
+        <div className="animate-fade-up motion-reduce:animate-none [animation-delay:240ms] flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
           <a href="#projects" className="btn-outline">
             {t('cta')}
           </a>
