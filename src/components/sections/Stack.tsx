@@ -17,23 +17,23 @@ export function Stack() {
       <motion.h2
         id="stack-heading"
         {...reveal()}
-        className="text-3xl md:text-5xl font-display font-bold text-accent mb-16"
+        className="mx-auto max-w-6xl text-center text-3xl md:text-5xl font-display font-bold text-accent mb-16"
       >
         {t('heading')}
       </motion.h2>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {stack.map((group, index) => (
           <motion.div
             key={group.category}
             {...reveal(index * STAGGER)}
             whileHover={{ y: -4 }}
-            className="border border-border bg-surface p-6 hover:border-border-strong"
+            className="border border-border bg-surface p-6 text-center hover:border-border-strong"
           >
             <h3 className="text-sm uppercase tracking-wide text-accent mb-4">
               {t(`categories.${group.category}`)}
             </h3>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap justify-center gap-2">
               {group.items.map((tech) => (
                 <li
                   key={tech}
