@@ -4,6 +4,7 @@ import { useRef, useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import { reveal } from '@/lib/motion';
+import { MaskHeading } from '@/components/MaskHeading';
 
 const EMAIL = 'guscodigo@gmail.com';
 const PHONE_DISPLAY = '+51 904 845 087';
@@ -90,17 +91,20 @@ export function Contact() {
       aria-labelledby="contact-heading"
       className="min-h-screen flex items-center justify-center px-8 md:px-16 py-24 border-t border-border"
     >
-      <motion.div {...reveal()} className="mx-auto w-full max-w-4xl text-center">
-        <h2
+      <div className="mx-auto w-full max-w-4xl text-center">
+        <MaskHeading
           id="contact-heading"
-          className="text-3xl md:text-5xl font-display font-bold text-accent mb-8"
+          text={t('heading')}
+          className="mb-8 font-display text-3xl font-bold text-accent md:text-5xl"
+        />
+        <motion.p
+          {...reveal(0.15)}
+          className="text-lg md:text-xl text-foreground leading-relaxed mb-10"
         >
-          {t('heading')}
-        </h2>
-        <p className="text-lg md:text-xl text-foreground leading-relaxed mb-10">
           {t('body')}
-        </p>
+        </motion.p>
 
+        <motion.div {...reveal(0.25)}>
         <form
           onSubmit={handleSubmit}
           noValidate
@@ -248,7 +252,8 @@ export function Contact() {
             </a>
           </div>
         </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

@@ -14,7 +14,7 @@ Portfolio personal de Franco Cardenas: una sola página bilingüe (es/en) con se
 
 - Todo el código vive en `src/` (el alias `@/` apunta a `src/`).
 - `src/app/[locale]/`: `layout.tsx` (fuentes, metadata, `NextIntlClientProvider`), `page.tsx` (arma las secciones), `globals.css` (tokens) y `opengraph-image.tsx`. En `src/app/`: `api/contact`, `icon`, `apple-icon`, `robots`, `sitemap`.
-- `src/components/sections/`: una sección por archivo. `src/components/`: `Header`, `Footer` y piezas de movimiento (`MotionProvider`, `SmoothScroll`, `ScrollProgress`, `ParallaxLayer`).
+- `src/components/sections/`: una sección por archivo. `src/components/`: `Header`, `Footer` y piezas de movimiento (`MotionProvider`, `SmoothScroll`, `ScrollProgress`, `ParallaxLayer`, `Backdrop`, `MaskHeading`, `ScrollHighlight`).
 - `src/content/`: datos estructurados (`projects.ts`, `stack.ts`): ids, stack y links. Los textos visibles no van aquí.
 - `messages/es.json` y `messages/en.json`: todos los textos de la página, agrupados por sección (`Nav`, `Hero`, `About`, `Projects.items.<id>`, `Stack`, `Contact`…).
 - `src/lib/`: `site.ts` (URL, nombre, redes), `motion.ts` (tiempos y variantes de animación), `supabase.ts`, `useLenis.ts`.
