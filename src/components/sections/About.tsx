@@ -23,6 +23,7 @@ export function About() {
         <div className="space-y-6 text-left text-lg md:text-xl text-foreground leading-relaxed">
           <p>{t('body')}</p>
           <p>{t('passion')}</p>
+          <p>{t('mission')}</p>
         </div>
       </motion.div>
     </section>

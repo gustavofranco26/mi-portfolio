@@ -20,7 +20,8 @@
   "About": {
     "heading": "About me",
     "body": "Full-stack software engineer, Holberton School graduate. I built and optimized production systems at American Certification Service, improving site speed by over 20%. I currently develop internal tools with Next.js and Supabase, and previously taught full-stack programming as a freelancer.",
-    "passion": "Programming is what I am most passionate about, and the backend is where I feel most at home: building the logic and data that hold a product together. Still, I give the frontend the same care, because good software should also feel good to use: clear, smooth and pleasant for the people who use it."
+    "passion": "Programming is what I am most passionate about, and the backend is where I feel most at home: building the logic and data that hold a product together. Still, I give the frontend the same care, because good software should also feel good to use: clear, smooth and pleasant for the people who use it.",
+    "mission": "I am looking to work with new companies and brands, and to support the people I feel my skills and experience can make everyday life easier for. What drives me most as a developer is taking an idea and bringing it to real life: turning it into a concrete tool that someone uses every day. I am also fascinated by learning, not only from each project, but also from the industry behind every new client, how their business works and the challenges it faces."
   },
   "Projects": {
     "heading": "Projects",
