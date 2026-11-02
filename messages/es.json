@@ -19,7 +19,8 @@
   },
   "About": {
     "heading": "Sobre mí",
-    "body": "Ingeniero de software full-stack egresado de Holberton School. Construí y optimicé sistemas en producción en American Certification Service, mejorando la velocidad del sitio en más de un 20%. Hoy desarrollo herramientas internas con Next.js y Supabase, y antes di clases de programación full-stack de forma freelance."
+    "body": "Ingeniero de software full-stack egresado de Holberton School. Construí y optimicé sistemas en producción en American Certification Service, mejorando la velocidad del sitio en más de un 20%. Hoy desarrollo herramientas internas con Next.js y Supabase, y antes di clases de programación full-stack de forma freelance.",
+    "passion": "Soy un programador apasionado por lo que hago. Disfruto más el backend, pero sin dejar de lado el diseño frontend: me importa que la experiencia de quien navega sea agradable, fluida y cuidada."
   },
   "Projects": {
     "heading": "Proyectos",
