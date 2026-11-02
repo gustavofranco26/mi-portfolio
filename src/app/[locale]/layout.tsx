@@ -8,6 +8,7 @@ import { GITHUB_URL, LINKEDIN_URL, SITE_NAME, SITE_URL } from '@/lib/site';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import { MotionProvider } from '@/components/MotionProvider';
 import { ScrollProgress } from '@/components/ScrollProgress';
+import { Backdrop } from '@/components/Backdrop';
 import './globals.css';
 import { Header } from '@/components/Header';
 
@@ -111,6 +112,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <MotionProvider>
             <SmoothScroll>
+              <Backdrop />
               <ScrollProgress />
               <a
                 href="#main"

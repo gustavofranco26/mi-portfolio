@@ -66,6 +66,15 @@
   }
 }
 
+@utility glow {
+  border-radius: 9999px;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--color-accent) 7%, transparent),
+    transparent
+  );
+}
+
 html {
   color-scheme: dark;
   scroll-padding-top: 5rem;

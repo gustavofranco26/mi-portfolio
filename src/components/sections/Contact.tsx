@@ -233,9 +233,13 @@ export function Contact() {
             >
               {PHONE_DISPLAY}
             </a>
-            <button type="button" disabled className="btn-outline">
+            <a
+              href="/Franco-Cardenas-CV.pdf"
+              download="Franco-Cardenas-CV.pdf"
+              className="btn-outline"
+            >
               {t('cv')}
-            </button>
+            </a>
           </div>
         </div>
       </motion.div>
